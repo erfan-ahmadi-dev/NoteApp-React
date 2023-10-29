@@ -1,11 +1,44 @@
 import "./App.css";
+// import Body from "./components/Body/Body";
+import Messages from "./components/Messages/Messages";
+import empty from "./assets/emptyNote.png";
+
+import Body from "./components/Body/Body";
+import Search from "./components/Body/Search";
+import AddNote from "./components/Body/AddNote";
+import ViewNote from "./components/Body/ViewNote";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div className="App bg-primary">
-      <span>hello world</span>
-    </div>
-  );
+  const [page, setPage] = useState("main");
+  const [noteIdToView, setNoteIdToView] = useState();
+  const [noteColor, setColor] = useState();
+  const changtoView = (noteId, color) => {
+    setPage("view");
+    setNoteIdToView(noteId);
+    setColor(color);
+  };
+  const changtoMain = () => setPage("main");
+  const changtoSearch = () => setPage("search");
+  const changtoAdd = () => setPage("addNew");
+
+  function detectPage() {
+    if (page === "main") {
+      return (
+        <Body addNew={changtoAdd} search={changtoSearch} note={changtoView} />
+      );
+    } else if (page === "view") {
+      return (
+        <ViewNote main={changtoMain} noteId={noteIdToView} color={noteColor} />
+      );
+    } else if (page === "addNew") {
+      return <AddNote main={changtoMain} save="hi" />;
+    } else if (page === "search") {
+      return <Search click={changtoSearch} />;
+    }
+  }
+
+  return <div className="relative h-screen">{detectPage()}</div>;
 }
 
 export default App;
