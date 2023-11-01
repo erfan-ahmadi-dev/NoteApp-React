@@ -12,11 +12,11 @@ import { useState } from "react";
 function App() {
   const [page, setPage] = useState("main");
   const [noteIdToView, setNoteIdToView] = useState();
-  const [noteColor, setColor] = useState();
-  const changtoView = (noteId, color) => {
+  // const [noteColor, setColor] = useState();
+  const changtoView = (noteId) => {
     setPage("view");
     setNoteIdToView(noteId);
-    setColor(color);
+    // setColor(color);
   };
   const changtoMain = () => setPage("main");
   const changtoSearch = () => setPage("search");
@@ -28,13 +28,11 @@ function App() {
         <Body addNew={changtoAdd} search={changtoSearch} note={changtoView} />
       );
     } else if (page === "view") {
-      return (
-        <ViewNote main={changtoMain} noteId={noteIdToView} color={noteColor} />
-      );
+      return <ViewNote main={changtoMain} noteId={noteIdToView} />;
     } else if (page === "addNew") {
-      return <AddNote main={changtoMain} save="hi" />;
+      return <AddNote main={changtoMain} />;
     } else if (page === "search") {
-      return <Search click={changtoSearch} />;
+      return <Search note={changtoView} />;
     }
   }
 

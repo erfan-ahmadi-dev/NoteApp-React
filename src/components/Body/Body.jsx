@@ -19,30 +19,36 @@ function Body(props) {
   const goToSearch = () => {
     props.search();
   };
-  const goToNote = (noteId, color) => {
-    props.note(noteId, color);
+  const goToNote = (noteId) => {
+    props.note(noteId);
+  };
+  const closeModal = () => {
+    document.getElementById("my_modal_2").close();
+  };
+  const showModal = () => {
+    document.getElementById("my_modal_2").showModal();
   };
 
   const getData = JSON.parse(localStorage.getItem("notes")) || [];
 
   return (
     <div>
-      <header className="flex w-full gap-3 p-5 items-center h-[15%] justify-between">
+      <header className="headerStyle">
         <h1 className="w-3/4 font-semibold text-3xl">Notes</h1>
         <RoundedButton imgSrc={searchIcon} clickFunc={goToSearch} />
-        <RoundedButton imgSrc={infoIcon} />
+        <RoundedButton imgSrc={infoIcon} clickFunc={showModal} />
       </header>
       {/**/}
-      <div className="w-full h-screen flex flex-col items-center gap-4 p-4 ">
+      <div className="noteListStyle ">
         {getData.length !== 0 ? (
           getData.map((item) => {
             return (
               <NoteCard
-                title={item.title}
                 click={goToNote}
                 key={item.id}
                 noteId={item.id}
                 color={item.color}
+                title={item.title}
               />
             );
           })
@@ -53,12 +59,26 @@ function Body(props) {
           ></Messages>
         )}
       </div>
+
       <img
         src={addIcon}
         alt="button"
         className="p-2.5 w-10 h-10 rounded-full drop-shadow-floatShadow absolute bg-primary bottom-4 right-4"
         onClick={addNewNote}
       />
+      <dialog
+        id="my_modal_2"
+        className={`modal place-content-center place-items-center bg-overlay max-w-full w-screen max-h-full h-screen`}
+        onClick={closeModal}
+      >
+        <div className="modal-box fixed top-[35%] left-[4%] bg-primary rounded-3xl flex flex-col justify-between items-center w-11/12 h-1/4 text-[#CFCFCF] text-sm gap-4 p-5">
+          <div className="w-full h-full flex flex-col items-center justify-center">
+            <span className="">Designed by - Erfan</span>
+            <span>app version - 1.0.0</span>
+          </div>
+          <span>Made by</span>
+        </div>
+      </dialog>
     </div>
   );
 }

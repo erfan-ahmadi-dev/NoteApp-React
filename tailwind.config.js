@@ -14,7 +14,7 @@ module.exports = {
         secondary: "#3B3B3B",
         priamaryText: "#fffff",
         secondaryText: "#9A9A9A",
-        overlay: "#C4C4C4",
+        overlay: "rgb(238, 238, 238,0.2)",
         buttonsColor: "#3B3B3B",
       },
       fontFamily: {
@@ -22,5 +22,4 @@ module.exports = {
       },
     },
   },
-  plugins: [],
 };
