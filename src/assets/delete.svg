@@ -1,0 +1,21 @@
+<svg width="28" height="30" viewBox="0 0 28 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="28" height="30" fill="#E5E5E5"/>
+<g id="Editor">
+<g clip-path="url(#clip0_0_1)">
+<rect x="-344" y="-63" width="414" height="896" rx="30" fill="#030303"/>
+<rect id="Button 7" opacity="0.8" x="-11" y="-10" width="50" height="50" rx="15" fill="#3B3B3B"/>
+<rect id="Rectangle 17" opacity="0.2" x="-344" y="-63" width="414" height="896" fill="#C4C4C4"/>
+<g id="&#240;&#159;&#166;&#134; icon &#34;trash&#34;">
+<path id="Vector" d="M23.3334 13.3435V26.6721C23.3334 27.142 22.9752 27.5228 22.5334 27.5228H5.46669C5.02486 27.5228 4.66669 27.142 4.66669 26.6721V13.3435" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M11.3333 21.8511V13.3435" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M16.6667 21.8511V13.3435" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M26 7.67174H19.3333M19.3333 7.67174V2.85076C19.3333 2.3809 18.9752 2 18.5333 2H9.46667C9.02484 2 8.66667 2.3809 8.66667 2.85076V7.67174M19.3333 7.67174H8.66667M2 7.67174H8.66667" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect x="-344" y="-63" width="414" height="896" rx="30" fill="white"/>
+</clipPath>
+</defs>
+</svg>
