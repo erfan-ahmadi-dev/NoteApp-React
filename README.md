@@ -1,4 +1,8 @@
+an react js note app created for moblie user that saves data in local storage
+
+
 # Getting Started with Create React App
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
